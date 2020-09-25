@@ -2,13 +2,15 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import './App.css';
 import {LoginPage} from "./pages/LoginPage";
+import LobbyPage from "./pages/LobbyPage";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
+    <div className="container">
       <Router>
         <Switch>
-            <Route path={"/"} component={LoginPage}/>
+            <Route path={"/"} component={LoginPage} exact/>
+            <Route path={"/lobby"} component={LobbyPage}/>
             <Redirect to={'/'}/>
         </Switch>
       </Router>
