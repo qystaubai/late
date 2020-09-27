@@ -23,11 +23,20 @@ export const LoginPage: React.FC = () => {
                     </div>
                     <Link to={{
                         pathname: "/lobby",
-                        state: { username: username }
+                        state: {
+                            username: username,
+                            fromHost: true
+                        }
                     }}>
                         <button className="btn btn-primary col-6" onClick={host}>Host</button>
                     </Link>
-                    <Link to="/lobby">
+                    <Link to={{
+                        pathname: "/lobby",
+                        state: {
+                            username: username,
+                            fromHost: false
+                        }
+                    }}>
                         <button className="btn btn-primary col-6">Find</button>
                     </Link>
                 </form>

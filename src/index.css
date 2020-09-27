@@ -1,5 +1,12 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+/*
+#120D31 - main dark blue
+#CCE6F6 - main light blue
+#4BA3C3 - blue
+#D62839 - red
+#F5CB5C - yellow
+*/
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +14,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #120D31;
+  color: aliceblue;
 }
 
 code {
