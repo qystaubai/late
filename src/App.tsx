@@ -6,7 +6,8 @@ import {LobbyPage} from "./pages/LobbyPage";
 
 const App: React.FC = () => {
   return (
-    <div className="container">
+    <div className="container text-center">
+
       <Router>
         <Switch>
             <Route path={"/"} component={LoginPage} exact/>
@@ -14,6 +15,7 @@ const App: React.FC = () => {
             <Redirect to={'/'}/>
         </Switch>
       </Router>
+        <label id="logo">Late!</label>
     </div>
   );
 }

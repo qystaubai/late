@@ -39,10 +39,10 @@ export const LobbyPage: React.FC<Props> = (props: Props) => {
                 </div>
             </div>
             <div className='main-content row'>
-                <div className='col-2'>
+                <div className='col-2 button-tab'>
                     <ButtonTab toggle={toggle}/>
                 </div>
-                <div className='col-10'>
+                <div className='col-10 test'>
                     <ContentTab content={cont}/>
                 </div>
             </div>

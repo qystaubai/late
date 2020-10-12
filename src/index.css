@@ -1,11 +1,13 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 /*
+#8D6A9F - main purple
 #120D31 - main dark blue
 #CCE6F6 - main light blue
 #4BA3C3 - blue
 #D62839 - red
-#F5CB5C - yellow
+#F5CB5C - yellow - E9D758 - #FFE45E - good one
+#F0F8FF - white
 */
 body {
   margin: 0;
@@ -14,11 +16,50 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #120D31;
-  color: aliceblue;
+  background-color: #8D6A9F;
+  color: #F0F8FF;
+}
+
+.btn {
+  color: #F0F8FF;
+  border-color: #F0F8FF;
+}
+
+.btn:hover {
+  color: #FFE45E;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container {
+  height: 100vh;
+}
+
+#logo {
+  color: #FFE45E;
+  position: absolute;
+  bottom: 5vh;
+}
+
+.form-container {
+  padding-top: 25vh;
+}
+
+.form-control, .form-control:focus {
+  background-color: transparent;
+  border-color: #F0F8FF;
+  color: #F0F8FF;
+}
+
+.test {
+  border: 1px solid #F0F8FF;
+}
+
+.button-tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }

@@ -11,7 +11,7 @@ const ButtonComp: React.FC<Props> = (props: Props) => {
 
 
         <>
-            <button onClick={() =>{props.toggle()}}>
+            <button className="btn" onClick={() =>{props.toggle()}}>
                 {props.button}
             </button>
         </>
