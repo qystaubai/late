@@ -8,6 +8,7 @@
 #D62839 - red
 #F5CB5C - yellow - E9D758 - #FFE45E - good one
 #F0F8FF - white
+#35CE8D - green
 */
 body {
   margin: 0;
@@ -29,18 +30,40 @@ body {
   color: #FFE45E;
 }
 
-code {
+.top-bar {
+  height: 5vh;
+}
+
+.green-border {
+  border-color: #35CE8D!important;
+  color: #35CE8D!important;
+}
+
+.code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  border-bottom: 1px solid #F0F8FF;
+  transition-duration: .15s;
+  transition-timing-function: ease-in-out;
+}
+
+.code:hover {
+  border-bottom-color: #FFE45E;
+  color: #FFE45E;
 }
 
 .container {
   height: 100vh;
+  text-align: center;
 }
 
 #logo {
   color: #FFE45E;
   position: absolute;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  left: 5vh;
+  /*right: 0;*/
   bottom: 5vh;
 }
 
@@ -54,12 +77,53 @@ code {
   color: #F0F8FF;
 }
 
-.test {
-  border: 1px solid #F0F8FF;
+.event {
+  text-align: right;
 }
 
-.button-tab {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+.main-content__left {
+  padding-right: 0;
 }
+
+.main-content__right {
+  padding-left: 0;
+}
+
+.info {
+  height: 85vh;
+  padding-right: 15px;
+  text-align: left;
+  border-right: 1px solid #F0F8FF;
+  font-size: 3rem;
+  overflow: scroll;
+}
+
+.info ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.info__event {
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info__event__icon {
+  font-size: .7em;
+}
+
+.member {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #F0F8FF;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.member__icon {
+  font-size: .6em;
+  align-self: center;
+}
+

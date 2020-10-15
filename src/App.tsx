@@ -6,7 +6,7 @@ import {LobbyPage} from "./pages/LobbyPage";
 
 const App: React.FC = () => {
   return (
-    <div className="container text-center">
+    <div className="container">
 
       <Router>
         <Switch>
