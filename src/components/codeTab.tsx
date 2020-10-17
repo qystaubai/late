@@ -17,7 +17,7 @@ const CodeTab: React.FC = () => {
     }
     return (
         <>
-            <div className={`link code ${linkSuccess? 'green-border': ''}`} onClick={copy}>
+            <div className={`link code clickable ${linkSuccess? 'green-border': ''}`} onClick={copy}>
                 {link}
             </div>
         </>

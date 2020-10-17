@@ -4,7 +4,9 @@ const ChatCont: React.FC = () => {
 
     return (
         <>
-            chat
+            <div className="chat">
+                haha chat
+            </div>
         </>
     )
 }

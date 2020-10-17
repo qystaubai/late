@@ -30,6 +30,16 @@ body {
   color: #FFE45E;
 }
 
+.clickable {
+  transition-duration: .15s;
+  transition-timing-function: ease-in-out;
+}
+
+.clickable:hover {
+  border-bottom-color: #FFE45E;
+  color: #FFE45E;
+}
+
 .top-bar {
   height: 5vh;
 }
@@ -43,13 +53,6 @@ body {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
   border-bottom: 1px solid #F0F8FF;
-  transition-duration: .15s;
-  transition-timing-function: ease-in-out;
-}
-
-.code:hover {
-  border-bottom-color: #FFE45E;
-  color: #FFE45E;
 }
 
 .container {
@@ -60,10 +63,7 @@ body {
 #logo {
   color: #FFE45E;
   position: absolute;
-  /*margin-left: auto;*/
-  /*margin-right: auto;*/
   left: 5vh;
-  /*right: 0;*/
   bottom: 5vh;
 }
 
@@ -86,7 +86,7 @@ body {
 }
 
 .main-content__right {
-  padding-left: 0;
+  padding-left: 15px;
 }
 
 .info {
@@ -96,6 +96,11 @@ body {
   border-right: 1px solid #F0F8FF;
   font-size: 3rem;
   overflow: scroll;
+}
+
+.address {
+  font-size: 2rem;
+  border-bottom: 1px solid #F0F8FF;
 }
 
 .info ul {
@@ -125,5 +130,18 @@ body {
 .member__icon {
   font-size: .6em;
   align-self: center;
+}
+
+.ymap {
+  height: 35vh;
+}
+
+ymaps {
+  transition-duration: .15s;
+  transition-timing-function: ease-in-out;
+}
+
+.map-hidden ymaps, .map-hidden .ymap {
+  height: 0!important;
 }
 

@@ -17,10 +17,13 @@ interface Props {
 export const LobbyPage: React.FC<Props> = (props: Props) => {
 
 
-    const [cont, setCont] = useState('info')
+    const [map, setMap] = useState(false);
+    const [placemark, setPlacemark] = useState(null)
 
-    const toggle = (button: string) => {
-        setCont(button);
+    const toggle: (placemark?: Array<number>) => void = () => {
+        setMap(!map);
+        if (placemark) setPlacemark(placemark);
+        console.log('toggle');
     }
 
 
@@ -42,10 +45,10 @@ export const LobbyPage: React.FC<Props> = (props: Props) => {
             </div>
             <div className='main-content row'>
                 <div className='col-4 main-content__left'>
-                    <InfoCont />
+                    <InfoCont toggle={toggle}/>
                 </div>
                 <div className='col-8 main-content__right'>
-                    <MapCont />
+                    <MapCont show={map} placemark={placemark}/>
                     <ChatCont />
                 </div>
             </div>

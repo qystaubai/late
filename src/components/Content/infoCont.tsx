@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {MemberTab} from "../memberTab";
 
-const InfoCont: React.FC = () => {
+const InfoCont: React.FC<{toggle: ()=>void}> = (props: {toggle: ()=>void}) => {
 
     const [members, setMembers] = useState([
         {username: 'chel', readiness: 'full'},
@@ -16,6 +16,7 @@ const InfoCont: React.FC = () => {
     return (
         <>
             <div className="info">
+                <div className="address clickable" onClick={props.toggle}>Улица пушкина дом колотушкина</div>
                 <ul>
                     <li className="info__event">
                         <div>
