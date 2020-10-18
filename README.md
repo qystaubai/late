@@ -1,1 +1,1 @@
-Meeting manager. Abandoned due to bad concept.
+Meeting manager. Abandoned due to concept flaws.
