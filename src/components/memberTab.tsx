@@ -1,7 +1,10 @@
 import React, {useEffect, useState} from 'react';
+import {PlacemarkGeometry} from "react-yandex-maps";
 interface Member {
-    username: string;
-    readiness: string;
+    username: string,
+    readiness: string,
+    location: Array<number>,
+    showOnMap: (placemark?: PlacemarkGeometry|undefined) => void
 }
 
 export const MemberTab: React.FC<Member> = (props: Member) => {
@@ -33,7 +36,9 @@ export const MemberTab: React.FC<Member> = (props: Member) => {
 
     return (
         <>
-            <div className="member">
+            <div className="member clickable" onClick={()=>{
+                props.showOnMap(props.location)
+            }}>
                 <div>
                     {props.username}
                 </div>

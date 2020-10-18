@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {YMaps, Map, Placemark} from 'react-yandex-maps';
+import React, {useEffect, useState} from 'react';
+import {YMaps, Map, Placemark, PlacemarkGeometry} from 'react-yandex-maps';
 
-const MapCont: React.FC<{show: boolean, placemark: (Array<number>|null)}> =
-    (props: {show: boolean, placemark: (Array<number>|null)}) => {
+const MapCont: React.FC<{show: boolean, placemark: (PlacemarkGeometry|undefined)}> =
+    (props: {show: boolean, placemark: (PlacemarkGeometry|undefined)}) => {
 
     return (
         <>
@@ -10,7 +10,7 @@ const MapCont: React.FC<{show: boolean, placemark: (Array<number>|null)}> =
                 <YMaps>
                     <div>
                         <Map className="ymap" defaultState={{ center: [55.75, 37.57], zoom: 9 }} >
-                            {props.placemark?<Placemark geometry={props.placemark} />:''}
+                            <Placemark geometry={props.placemark} />
                         </Map>
                     </div>
                 </YMaps>

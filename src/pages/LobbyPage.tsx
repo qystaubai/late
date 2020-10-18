@@ -4,6 +4,7 @@ import NameTab from "../components/nameTab";
 import InfoCont from "../components/Content/infoCont";
 import ChatCont from "../components/Content/chatCont";
 import MapCont from "../components/Content/mapCont";
+import {PlacemarkGeometry} from "react-yandex-maps";
 
 interface Props {
     location: {
@@ -18,12 +19,15 @@ export const LobbyPage: React.FC<Props> = (props: Props) => {
 
 
     const [map, setMap] = useState(false);
-    const [placemark, setPlacemark] = useState(null)
+    const [placemark, setPlacemark] = useState<PlacemarkGeometry|undefined>(undefined)
 
-    const toggle: (placemark?: Array<number>) => void = () => {
-        setMap(!map);
-        if (placemark) setPlacemark(placemark);
-        console.log('toggle');
+    const toggle: (placemark?: PlacemarkGeometry|undefined) => void = (placemark) => {
+        if (placemark !== undefined) {
+            setPlacemark(placemark);
+        } else {
+           setMap(!map);
+        }
+        console.log('toggle', placemark);
     }
 
 
