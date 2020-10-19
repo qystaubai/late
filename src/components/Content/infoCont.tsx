@@ -2,42 +2,44 @@ import React, {useState} from 'react';
 import {MemberTab} from "../memberTab";
 import {PlacemarkGeometry} from "react-yandex-maps";
 
-const InfoCont: React.FC<{toggle: (placemark?: PlacemarkGeometry|undefined) => void}> = (props: {toggle: (placemark?: PlacemarkGeometry|undefined) => void}) => {
+interface InfoProps {
+    toggle: (placemark?: PlacemarkGeometry|undefined) => void,
+    address: {
+        address: string,
+        coordinates: Array<number>
+    },
+    members: Array<{
+    username: string,
+    readiness: string,
+    location: Array<number>,
+}>
+}
 
-    const [members, setMembers] = useState([
-        {username: 'chel', readiness: 'full', location: [55.75, 37.57]},
-        {username: 'chil', readiness: 'late', location: [55.65, 37.47]},
-        {username: 'chyl', readiness: 'not', location: [55.70, 37.17]},
-        {username: 'chil', readiness: 'cancel', location: [56.75, 36.57]},
-        {username: 'chol', readiness: 'here', location: [55.25, 37.37]},
-        {username: 'chul', readiness: 'way', location: [55.71, 37.67]},
-        {username: 'chal', readiness: 'way', location: [55.45, 36.57]}
-    ])
+const InfoCont: React.FC<InfoProps> = (props: InfoProps) => {
 
-    const [address, setAddress] = useState({
-        address: 'Улица пушкина дом колотушкина',
-        coordinates: [55.75, 37.77]
-    })
+
+
+
 
     return (
         <>
             <div className="info">
                 <div className="address clickable" onClick={() => {
-                    props.toggle(address.coordinates)
-                }}>{address.address}</div>
+                    props.toggle(props.address.coordinates)
+                }}>{props.address.address}</div>
                 <ul>
-                    <li className="info__event">
+                    <li className="info__event" key='info'>
                         <div>
                             <span className="material-icons info__event__icon">alarm</span>
                             10 hours
                         </div>
                         <div>
                             <span className="material-icons info__event__icon">people</span>
-                            {members.length} members
+                            {props.members.length} members
                         </div>
                     </li>
-                    {members.map(m =>
-                        <li><MemberTab key={m.username} username={m.username} readiness={m.readiness} location={m.location} showOnMap={props.toggle} /></li>
+                    {props.members.map(m =>
+                        <li key={m.username}><MemberTab member={m} showOnMap={props.toggle} /></li>
                     )}
                 </ul>
             </div>

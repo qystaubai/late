@@ -1,16 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import {PlacemarkGeometry} from "react-yandex-maps";
-interface Member {
-    username: string,
-    readiness: string,
-    location: Array<number>,
+interface MemberProps {
+    member: {
+        username: string,
+        readiness: string,
+        location: Array<number>,
+    },
     showOnMap: (placemark?: PlacemarkGeometry|undefined) => void
 }
 
-export const MemberTab: React.FC<Member> = (props: Member) => {
+export const MemberTab: React.FC<MemberProps> = (props: MemberProps) => {
     const [memberIcon, setMemberIcon] = useState('not')
     useEffect(() => {
-        switch (props.readiness) {
+        switch (props.member.readiness) {
             case 'here': {
                 setMemberIcon('done_all');
                 break;
@@ -32,15 +34,15 @@ export const MemberTab: React.FC<Member> = (props: Member) => {
                 break
             }
         }
-    }, [])
+    }, [props.member.readiness])
 
     return (
         <>
             <div className="member clickable" onClick={()=>{
-                props.showOnMap(props.location)
+                props.showOnMap(props.member.location)
             }}>
                 <div>
-                    {props.username}
+                    {props.member.username}
                 </div>
                 <span className="material-icons member__icon">{memberIcon}</span>
             </div>

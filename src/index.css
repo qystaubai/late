@@ -36,7 +36,7 @@ body {
 }
 
 .clickable:hover {
-  border-bottom-color: #FFE45E;
+  border-color: #FFE45E;
   color: #FFE45E;
 }
 
@@ -137,11 +137,50 @@ body {
 }
 
 ymaps {
-  transition-duration: .15s;
-  transition-timing-function: ease-in-out;
+  transition: height .15s ease-in-out 0s;
+  /*transition-duration: .15s;*/
+  /*transition-timing-function: ease-in-out;*/
 }
 
 .map-hidden ymaps, .map-hidden .ymap {
   height: 0!important;
 }
 
+.entrance-modal {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(40, 44, 52, .9);
+  font-size: 2rem;
+}
+
+.entrance-modal__hidden {
+  display: none;
+}
+
+.entrance-modal__form {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  padding: 2vh 2vw;
+  min-width: 30vw;
+  background-color: #8d6a9f;
+  z-index: 100;
+  opacity: initial;
+  overflow: scroll;
+}
+
+.entrance-modal__add {
+  font-size: 2rem;
+  border: 1px solid #F0F8FF;
+}
+
+.entrance-modal__member {
+  margin-bottom: 2vh;
+  border-bottom: 1px solid #F0F8FF;
+}
