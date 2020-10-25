@@ -5,8 +5,17 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+app.use((req, res, next) => {
+  console.log('happenede')
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+  console.log('endu')
+  next();
+});
 
-mongoose.connect("mongodb+srv://admin:sozder@soz.r8fea.mongodb.net/jirtrack?retryWrites=true&w=majority", {
+
+
+mongoose.connect("mongodb+srv://admin:sozder@soz.r8fea.mongodb.net/late?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true
@@ -37,7 +46,11 @@ if (process.env.NODE_ENV === 'production') {
 //   response.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
 // });
 
-app.use('/', (req, res) => {
+app.use('/event', require('./routes/event.route'))
+
+
+app.use( '/', (req, res) => {
+  console.log('not happenedde')
   res.send({answer: 'hey you got it'});
 })
 

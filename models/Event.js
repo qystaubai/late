@@ -1,14 +1,14 @@
 const {Schema, model} = require('mongoose');
 
 const schema = new Schema({
-    name: {type: String, required: true},
-    code: {type: String, required: true, unique: true},
-    date: {type: Date, required: true},
+    eventname: {type: String, required: true},
+    address: {type: String, required: true},
+    date: {type: String, required: true},
     members: {
         type: {
             username: String,
             status: String,
-            location: String
+            location: Array
         }
     },
     chatLogs: {
