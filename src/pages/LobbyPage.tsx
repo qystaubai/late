@@ -7,16 +7,7 @@ import MapCont from "../components/Content/mapCont";
 import {PlacemarkGeometry} from "react-yandex-maps";
 import EntranceModal from "../components/entranceModal";
 
-interface LobbyProps {
-    location: {
-        state: {
-            username: string,
-            fromHost: boolean
-        }
-    }
-}
-
-export const LobbyPage: React.FC<LobbyProps> = (props: LobbyProps) => {
+export const LobbyPage: React.FC = () => {
 
 
     const [map, setMap] = useState(false);
@@ -26,7 +17,7 @@ export const LobbyPage: React.FC<LobbyProps> = (props: LobbyProps) => {
         coordinates: [55.75, 37.77]
     })
     const [members, setMembers] = useState([
-        {username: 'chel', readiness: 'full', location: [55.75, 37.57]},
+        {username: 'kektor', readiness: 'full', location: [55.75, 37.57]},
         {username: 'chil', readiness: 'late', location: [55.65, 37.47]},
         {username: 'chyl', readiness: 'not', location: [55.70, 37.17]},
         {username: 'cheel', readiness: 'cancel', location: [56.75, 36.57]},

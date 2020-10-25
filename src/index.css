@@ -26,10 +26,6 @@ body {
   border-color: #F0F8FF;
 }
 
-.btn:hover {
-  color: #FFE45E;
-}
-
 .clickable {
   transition-duration: .15s;
   transition-timing-function: ease-in-out;
@@ -38,6 +34,15 @@ body {
 .clickable:hover {
   border-color: #FFE45E;
   color: #FFE45E;
+}
+
+.clickable:hover:disabled {
+  border-color: #F0F8FF;
+  color: #F0F8FF;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
 }
 
 .top-bar {
@@ -75,6 +80,11 @@ body {
   background-color: transparent;
   border-color: #F0F8FF;
   color: #F0F8FF;
+}
+
+.form-group__label {
+  margin-top: .5rem;
+  margin-bottom: 0;
 }
 
 .event {
