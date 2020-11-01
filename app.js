@@ -48,10 +48,14 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use('/event', require('./routes/event.route'))
 
+//
+// app.use( '/', (req, res) => {
+//   console.log('not happenedde')
+//   res.send({answer: 'hey you got it'});
+// })
 
-app.use( '/', (req, res) => {
-  console.log('not happenedde')
-  res.send({answer: 'hey you got it'});
+app.use((err, req, res, next) => {
+  res.sendStatus(500);
 })
 
 app.listen(PORT, console.log(`Server is starting at ${PORT}`));

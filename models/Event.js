@@ -6,9 +6,10 @@ const schema = new Schema({
     date: {type: String, required: true},
     members: {
         type: {
+            id: Number,
             username: String,
             status: String,
-            location: Array
+            location: Array | null
         }
     },
     chatLogs: {
