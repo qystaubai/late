@@ -1,11 +1,9 @@
 import React, {MouseEvent, useState} from 'react';
+import {LobbyData} from "../pages/LobbyPage";
 
 interface EntranceModalProps {
-    members: Array<{
-        username: string,
-        readiness: string,
-        location: Array<number>,
-    }>
+    members: LobbyData['data']['eventData']['members'],
+    id: string
 }
 
 const EntranceModal: React.FC<EntranceModalProps> = (props: EntranceModalProps) => {
@@ -13,8 +11,7 @@ const EntranceModal: React.FC<EntranceModalProps> = (props: EntranceModalProps) 
     const [hidden, setHidden] = useState(false);
 
     const login: (event: MouseEvent<HTMLDivElement>) => void = (e: MouseEvent<HTMLDivElement>) => {
-        // console.log(e.currentTarget.textContent)
-        localStorage.setItem('userData', JSON.stringify({name: e.currentTarget.textContent, lobby: 'code228'}))
+        localStorage.setItem('userData', JSON.stringify({name: e.currentTarget.textContent, lobby: props?.id.slice(1)}))
         setHidden(true);
     }
 

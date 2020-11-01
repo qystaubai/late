@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 
-const CodeTab: React.FC = () => {
+interface CodeTabProps {
+    url: string
+}
+
+const CodeTab: React.FC<CodeTabProps> = (props: CodeTabProps) => {
     const [link, setLink] = useState('penis.ru/blm228');
     const [linkSuccess, setLinkSuccess] = useState(false);
 
@@ -18,7 +22,7 @@ const CodeTab: React.FC = () => {
     return (
         <>
             <div className={`link code clickable ${linkSuccess? 'green-border': ''}`} onClick={copy}>
-                {link}
+                {props.url.slice(1)}
             </div>
         </>
     )

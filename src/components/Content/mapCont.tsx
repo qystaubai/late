@@ -11,13 +11,6 @@ interface MapProps {
 }
 
 const MapCont: React.FC<MapProps> = (props: MapProps) => {
-
-    const [test, setTest] = useState([55.65, 37.47]);
-
-    const te = () => {
-        setTest([55.75, 37.57]);
-    }
-
     return (
         <>
             <div className={`map${!props.show? '': ' map-hidden'}`}>
@@ -25,12 +18,10 @@ const MapCont: React.FC<MapProps> = (props: MapProps) => {
                     <div>
                         <Map className="ymap" state={{ center: props.address.coordinates, zoom: 9 }} >
                             <Placemark geometry={props.placemark} />
-                            {/*{test? <Placemark geometry={[57.75, 37.57]} />: ''}*/}
                         </Map>
                     </div>
                 </YMaps>
             </div>
-            <button onClick={te}> asdf </button>
         </>
     )
 }

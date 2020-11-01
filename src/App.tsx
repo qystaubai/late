@@ -11,8 +11,8 @@ const App: React.FC = () => {
       <Router>
         <Switch>
             <Route path={"/"} component={LoginPage} exact/>
-            <Route path={"/lobby/:id"} component={LobbyPage}/>
-            {/*<Redirect to={'/'}/>*/}
+            <Route path={"/:id([a-zA-z0-9]{24})"} component={LobbyPage}/>
+            <Redirect to={'/'}/>
         </Switch>
       </Router>
         <label id="logo">Late!</label>

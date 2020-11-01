@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import {useApi} from "../hooks/api.hook";
 
 export interface EventData {
@@ -28,12 +28,11 @@ export const LoginPage: React.FC = () => {
 
     const host: (() => void) = async () => {
         const id = await api.callApi('/event/create', eventData, 'POST');
-        history.push(`lobby/${id.data.id.slice(-5)}`);
+        history.push(`${id.data.id}`);
     }
 
     return (
         <>
-
             <div className="form-container row justify-content-center">
                 <form className="col-6">
                     <div className="form-group">
@@ -55,7 +54,7 @@ export const LoginPage: React.FC = () => {
                         <button
                             className="btn btn-outline clickable col-12"
                             type="button"
-                            // disabled={!(eventData.username && eventData.eventname && eventData.address && eventData.date)}
+                            disabled={!(eventData.username && eventData.eventname && eventData.address && eventData.date)}
                             onClick={host}>
                             Host
                         </button>
